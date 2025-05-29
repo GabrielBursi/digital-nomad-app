@@ -1,0 +1,5 @@
+.husky
+scripts/
+.expo/
+generators/
+expo-env.d.ts
