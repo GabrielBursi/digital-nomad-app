@@ -16,17 +16,12 @@ export default function (plop) {
 		actions: [
 			{
 				type: 'add',
-				path: '../screens/{{pascalCase name}}//{{pascalCase name}}.tsx',
+				path: '../src/screens/{{pascalCase name}}//{{pascalCase name}}.tsx',
 				templateFile: 'templates/screen/index.tsx.hbs',
 			},
 			{
 				type: 'add',
-				path: '../screens/{{pascalCase name}}/{{pascalCase name}}.spec.tsx',
-				templateFile: 'templates/screen/test.spec.tsx.hbs',
-			},
-			{
-				type: 'add',
-				path: '../screens/{{pascalCase name}}//{{pascalCase name}}.types.ts',
+				path: '../src/screens/{{pascalCase name}}//{{pascalCase name}}.types.ts',
 				templateFile: 'templates/screen/types.ts.hbs',
 			},
 		],

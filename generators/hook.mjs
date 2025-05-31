@@ -11,13 +11,8 @@ export default function (plop) {
 		actions: [
 			{
 				type: 'add',
-				path: '../hooks/use{{pascalCase name}}/use{{pascalCase name}}.tsx',
+				path: '../src/hooks/use{{pascalCase name}}/use{{pascalCase name}}.tsx',
 				templateFile: 'templates/hooks/index.tsx.hbs',
-			},
-			{
-				type: 'add',
-				path: '../hooks/use{{pascalCase name}}/use{{pascalCase name}}.test.tsx',
-				templateFile: 'templates/hooks/test.tsx.hbs',
 			},
 		],
 	})

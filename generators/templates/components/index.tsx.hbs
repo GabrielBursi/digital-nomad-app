@@ -1,20 +1,20 @@
 {{#if useProps}}
 import React from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import { {{pascalCase name}}Props } from './{{pascalCase name}}.types'
 
 export const {{pascalCase name}} = ({ }: Readonly<{{pascalCase name}}Props>) => {
     return (
-			<View>{{pascalCase name}}</View>
+			<View><Text>{{pascalCase name}}</Text></View>
     )
 }
 {{else}}
 import React from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 
 export const {{pascalCase name}} = () => {
     return (
-			<View>{{pascalCase name}}</View>
+			<View><Text>{{pascalCase name}}</Text></View>
     )
 }
 {{/if}}

@@ -1,2 +1,2 @@
 npm run typecheck
-npm run lint-staged --concurrent false -v
+npm run lint-staged --concurrent false
