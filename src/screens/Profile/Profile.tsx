@@ -2,12 +2,10 @@ import React from 'react'
 
 import { Box, Text } from '@/components'
 
-export const HomeScreen = () => {
+export const ProfileScreen = () => {
 	return (
 		<Box>
-			<Text variant="title28" color="gray2">
-				Home
-			</Text>
+			<Text>Home</Text>
 		</Box>
 	)
 }

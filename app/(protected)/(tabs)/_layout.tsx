@@ -1,30 +1,68 @@
 import React from 'react'
-import { Platform } from 'react-native'
 
 import { Tabs } from 'expo-router'
 
+import { Icon } from '@/components'
+import { useAppTheme } from '@/hooks'
+
 export default function TabLayout() {
+	const { colors } = useAppTheme()
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarStyle: Platform.select({
-					ios: {
-						position: 'absolute',
-					},
-					default: {},
-				}),
+				headerShown: false,
+				tabBarActiveTintColor: colors.primary,
+				tabBarInactiveTintColor: colors.gray2,
+				tabBarStyle: {
+					backgroundColor: colors.background,
+					paddingTop: 10,
+					height: 90,
+					borderTopWidth: 0,
+				},
+				tabBarLabelStyle: {
+					fontFamily: 'PoppinsRegular',
+					fontSize: 12,
+					color: colors.text,
+				},
 			}}
 		>
 			<Tabs.Screen
 				name="index"
 				options={{
-					title: 'Home',
+					title: 'Início',
+					tabBarIcon: ({ focused }) => {
+						return (
+							<Icon
+								name={focused ? 'Home-fill' : 'Home-outline'}
+								color={focused ? 'primary' : 'gray2'}
+							/>
+						)
+					},
 				}}
 			/>
 			<Tabs.Screen
 				name="explore"
 				options={{
-					title: 'Explore',
+					title: 'Explorar',
+					tabBarIcon: ({ focused }) => {
+						return (
+							<Icon name={'Explore'} color={focused ? 'primary' : 'gray2'} />
+						)
+					},
+				}}
+			/>
+			<Tabs.Screen
+				name="profile"
+				options={{
+					title: 'Perfil',
+					tabBarIcon: ({ focused }) => {
+						return (
+							<Icon
+								name={focused ? 'Person-fill' : 'Person-outline'}
+								color={focused ? 'primary' : 'gray2'}
+							/>
+						)
+					},
 				}}
 			/>
 		</Tabs>
