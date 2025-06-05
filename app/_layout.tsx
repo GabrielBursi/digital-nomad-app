@@ -9,6 +9,7 @@ import 'react-native-reanimated'
 
 export default function RootLayout() {
 	const [loaded] = useFonts({
+		IcoMoon: require('../assets/icons/icomoon.ttf') as number,
 		PoppinsBlack: require('../assets/fonts/Poppins-Black.ttf') as number,
 		PoppinsBlackItalic:
 			require('../assets/fonts/Poppins-BlackItalic.ttf') as number,
