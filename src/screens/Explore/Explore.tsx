@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Box, Text } from '@/components'
 
-export const HomeScreen = () => {
+export const ExploreScreen = () => {
 	return (
 		<Box>
-			<Text>Home</Text>
+			<Text>Explore</Text>
 		</Box>
 	)
 }
