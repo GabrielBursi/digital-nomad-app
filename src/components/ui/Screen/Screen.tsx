@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react'
 
-import { Box } from '@/components'
+import { Box } from '@/components/ui/Box/Box'
 
 import { ScreenProps } from './Screen.types'
 
