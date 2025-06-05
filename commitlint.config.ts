@@ -22,25 +22,7 @@ const Configuration: UserConfig = {
 				'revert', // Reverts a previous commit
 			],
 		],
-		'scope-enum': [
-			2,
-			'always',
-			[
-				'setup', // Project setup
-				'config', // Configuration files
-				'deps', // Dependency updates
-				'feature', // Feature-specific changes
-				'bug', // Bug fixes
-				'docs', // Documentation
-				'style', // Code style/formatting
-				'refactor', // Code refactoring
-				'test', // Tests
-				'build', // Build scripts or configuration
-				'ci', // Continuous integration
-				'release', // Release related changes
-				'other', // Other changes
-			],
-		],
+		'scope-enum': [2, 'always', ['ui']],
 	},
 }
 
