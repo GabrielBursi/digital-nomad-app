@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Box, Text } from '@/components'
+import { Screen, Text } from '@/components'
 
 export const ProfileScreen = () => {
 	return (
-		<Box>
+		<Screen>
 			<Text>Home</Text>
-		</Box>
+		</Screen>
 	)
 }

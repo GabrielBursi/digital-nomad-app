@@ -1,22 +1,22 @@
 {{#if useProps}}
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Screen, Text } from '@/components'
 import { {{pascalCase name}}ScreenProps } from './{{pascalCase name}}.types'
 
 export const {{pascalCase name}}Screen = ({ }: Readonly<{{pascalCase name}}ScreenProps>) => {
     return (
-            <View><Text>{{pascalCase name}}</Text></View>
+            <Screen><Text>{{pascalCase name}}</Text></Screen>
     )
 }
 
 
 {{else}}
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Screen, Text } from '@/components'
 
 export const {{pascalCase name}}Screen = () => {
     return (
-            <View><Text>{{pascalCase name}}</Text></View>
+            <Screen><Text>{{pascalCase name}}</Text></Screen>
     )
 }
 

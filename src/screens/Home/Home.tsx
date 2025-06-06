@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { Box, Text } from '@/components'
+import { Screen, Text } from '@/components'
 
 export const HomeScreen = () => {
 	return (
-		<Box>
+		<Screen>
 			<Text variant="title28" color="gray2">
 				Home
 			</Text>
-		</Box>
+		</Screen>
 	)
 }
