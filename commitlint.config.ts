@@ -22,7 +22,7 @@ const Configuration: UserConfig = {
 				'revert', // Reverts a previous commit
 			],
 		],
-		'scope-enum': [2, 'always', ['ui']],
+		'scope-enum': [2, 'always', ['ui', 'auth']],
 	},
 }
 

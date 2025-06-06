@@ -1,12 +1,17 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-import { Stack } from 'expo-router'
+import { Redirect, Stack } from 'expo-router'
 
 import 'react-native-reanimated'
 
+const isSignedIn = false
 export default function ProtectedLayout() {
+	if (isSignedIn) {
+		return <Redirect href="../sign-in" />
+	}
 	return (
-		<Stack>
-			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+		<Stack
+			screenOptions={{ headerShown: false, fullScreenGestureEnabled: true }}
+		>
+			<Stack.Screen name="(tabs)" />
 		</Stack>
 	)
 }
