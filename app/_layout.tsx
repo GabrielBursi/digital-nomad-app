@@ -49,7 +49,7 @@ export default function RootLayout() {
 				<Stack.Screen name="+not-found" />
 				<Stack.Screen name="sign-in" />
 			</Stack>
-			<StatusBar style="auto" />
+			<StatusBar style="light" />
 		</ThemeProvider>
 	)
 }
