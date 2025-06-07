@@ -9,7 +9,12 @@ export const Screen = ({
 	...boxProps
 }: Readonly<PropsWithChildren<ScreenProps>>) => {
 	return (
-		<Box backgroundColor="background" paddingHorizontal="s16" {...boxProps}>
+		<Box
+			backgroundColor="background"
+			flex={1}
+			paddingHorizontal="s16"
+			{...boxProps}
+		>
 			{children}
 		</Box>
 	)

@@ -1,13 +1,18 @@
 import React from 'react'
+import { StyleSheet } from 'react-native'
 
-import { Screen, Text } from '@/components'
+import { CitiesList, Screen } from '@/components'
 
 export const HomeScreen = () => {
 	return (
-		<Screen>
-			<Text variant="title28" color="gray2">
-				Home
-			</Text>
+		<Screen style={styles.screenContainer}>
+			<CitiesList />
 		</Screen>
 	)
 }
+
+const styles = StyleSheet.create({
+	screenContainer: {
+		paddingHorizontal: 0,
+	},
+})
