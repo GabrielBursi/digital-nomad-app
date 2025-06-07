@@ -1,7 +1,7 @@
 {{#if useProps}}
 import React from 'react'
 import { Screen, Text } from '@/components'
-import { {{pascalCase name}}ScreenProps } from './{{pascalCase name}}.types'
+import type { {{pascalCase name}}ScreenProps } from './{{pascalCase name}}.types'
 
 export const {{pascalCase name}}Screen = ({ }: Readonly<{{pascalCase name}}ScreenProps>) => {
     return (

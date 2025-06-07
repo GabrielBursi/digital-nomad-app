@@ -1,7 +1,7 @@
 {{#if useProps}}
 import React from 'react'
 import { Box, Text } from '@/components'
-import { {{pascalCase name}}Props } from './{{pascalCase name}}.types'
+import type { {{pascalCase name}}Props } from './{{pascalCase name}}.types'
 
 export const {{pascalCase name}} = ({ }: Readonly<{{pascalCase name}}Props>) => {
     return (
