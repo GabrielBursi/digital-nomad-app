@@ -1,5 +1,5 @@
-import type { ComponentType } from 'react'
+import type { ComponentProps } from 'react'
 
 import { Text } from './Text'
 
-export type TextProps = ComponentType<typeof Text>
+export type TextProps = ComponentProps<typeof Text>

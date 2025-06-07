@@ -1,5 +1,5 @@
-import type { ComponentType } from 'react'
+import type { ComponentProps } from 'react'
 
 import { Box } from './Box'
 
-export type BoxProps = ComponentType<typeof Box>
+export type BoxProps = ComponentProps<typeof Box>
