@@ -1,5 +1,6 @@
 export * from './Box/Box'
 export * from './Icon/Icon'
+export * from './IconButton/IconButton'
 export * from './Pill/Pill'
 export * from './Screen/Screen'
 export * from './Text/Text'
