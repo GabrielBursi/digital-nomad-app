@@ -1,8 +1,11 @@
 import React, { memo } from 'react'
 import { Pressable } from 'react-native'
 
-import { Box, Icon, Text } from '@/components'
 import { BoxProps } from '@/components/ui/Box/Box.types'
+
+import { Box } from '../Box/Box'
+import { Icon } from '../Icon/Icon'
+import { Text } from '../Text/Text'
 
 import { PillProps } from './Pill.types'
 

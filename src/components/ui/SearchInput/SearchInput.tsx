@@ -1,10 +1,11 @@
 import React, { memo, useState } from 'react'
 import { StyleSheet, TextInput } from 'react-native'
 
-import { Box, IconButton } from '@/components'
 import { useAppTheme } from '@/hooks'
 
+import { Box } from '../Box/Box'
 import type { BoxProps } from '../Box/Box.types'
+import { IconButton } from '../IconButton/IconButton'
 
 import type { SearchInputProps } from './SearchInput.types'
 

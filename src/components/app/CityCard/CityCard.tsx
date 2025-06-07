@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { ImageBackground, StyleSheet } from 'react-native'
 
-import { Box, Icon, Text } from '@/components'
+import { Box, Icon, Text } from '@/components/ui'
 import { useAppTheme } from '@/hooks'
 
 import { CityCardProps } from './CityCard.types'

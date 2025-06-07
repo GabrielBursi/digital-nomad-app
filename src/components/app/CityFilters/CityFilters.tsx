@@ -1,7 +1,9 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
 
-import { Box, CategoryPill, SearchInput } from '@/components'
+import { Box, SearchInput } from '@/components/ui'
+
+import { CategoryPill } from '../CategoryPill/CategoryPill'
 
 import type { CityFiltersProps } from './CityFilters.types'
 

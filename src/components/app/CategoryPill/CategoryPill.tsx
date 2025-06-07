@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 
-import { Pill } from '@/components/ui'
 import type { IconName } from '@/components/ui/Icon/Icon.types'
+import { Pill } from '@/components/ui/Pill/Pill'
 import type { CategoryCode } from '@/types/category'
 
 import type { CategoryPillProps } from './CategoryPill.types'

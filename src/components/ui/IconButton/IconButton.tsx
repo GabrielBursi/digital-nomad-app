@@ -1,8 +1,10 @@
 import React, { memo } from 'react'
 import { Pressable } from 'react-native'
 
-import { Box, Icon } from '@/components'
 import { useAppTheme } from '@/hooks'
+
+import { Box } from '../Box/Box'
+import { Icon } from '../Icon/Icon'
 
 import { IconButtonProps } from './IconButton.types'
 
