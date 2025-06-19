@@ -1,3 +1,4 @@
+export * from './BottomSheetMap/BottomSheetMap'
 export * from './CategoryPill/CategoryPill'
 export * from './CitiesList/CitiesList'
 export * from './CityCard/CityCard'
