@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { ImageBackground, StyleSheet } from 'react-native'
 
-import { Box, Icon, Text } from '@/components/ui'
+import { BlackOpacity, Box, Icon, Text } from '@/components/ui'
 import { useAppTheme } from '@/hooks'
 
 import { CityCardProps } from './CityCard.types'
@@ -14,13 +14,7 @@ const CityCardMemoized = ({ cityPreview }: Readonly<CityCardProps>) => {
 			style={styles.cityImage}
 			imageStyle={{ borderRadius: borderRadii.default }}
 		>
-			<Box
-				position="absolute"
-				width="100%"
-				height="100%"
-				backgroundColor="midnightBlack"
-				opacity={0.25}
-			/>
+			<BlackOpacity />
 			<Box flex={1} padding="s24" justifyContent="space-between">
 				<Box alignSelf="flex-end">
 					<Icon name="Favorite-outline" color="text" />

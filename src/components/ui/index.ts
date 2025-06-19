@@ -1,3 +1,4 @@
+export * from './BlackOpacity/BlackOpacity'
 export * from './Box/Box'
 export * from './Icon/Icon'
 export * from './IconButton/IconButton'
