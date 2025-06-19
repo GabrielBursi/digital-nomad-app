@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import React, { memo } from 'react'
-import { Animated, Pressable, StyleSheet, View } from 'react-native'
+import { Pressable, StyleSheet, View } from 'react-native'
 
-import {
+import Animated, {
 	interpolate,
 	interpolateColor,
 	useAnimatedStyle,
@@ -80,22 +80,20 @@ const AccordionBody = ({
 	const { borderRadii } = useAppTheme()
 	const height = useSharedValue(0)
 
-	const animatedStyle = useAnimatedStyle(() => {
-		return {
-			opacity: interpolate(progress.value, [0, 1], [0, 1]),
-			height: interpolate(progress.value, [0, 1], [0, height.value]),
-			borderTopLeftRadius: interpolate(
-				progress.value,
-				[0, 1],
-				[borderRadii.default, 0]
-			),
-			borderTopRightRadius: interpolate(
-				progress.value,
-				[0, 1],
-				[borderRadii.default, 0]
-			),
-		}
-	})
+	const animatedStyle = useAnimatedStyle(() => ({
+		opacity: interpolate(progress.value, [0, 1], [0, 1]),
+		height: interpolate(progress.value, [0, 1], [0, height.value]),
+		borderTopLeftRadius: interpolate(
+			progress.value,
+			[0, 1],
+			[borderRadii.default, 0]
+		),
+		borderTopRightRadius: interpolate(
+			progress.value,
+			[0, 1],
+			[borderRadii.default, 0]
+		),
+	}))
 
 	return (
 		<Animated.View style={[animatedStyle, styles.container]}>
@@ -120,7 +118,7 @@ const AccordionMemoized = ({
 
 	const handleOpenPress = () => {
 		isOpen.value = !isOpen.value
-		progress.value = withTiming(isOpen.value ? 0 : 1, { duration: 600 })
+		progress.value = withTiming(isOpen.value ? 0 : 1, { duration: 200 })
 	}
 
 	return (
