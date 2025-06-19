@@ -1,5 +1,6 @@
 export * from './BlackOpacity/BlackOpacity'
 export * from './Box/Box'
+export * from './Divider/Divider'
 export * from './Icon/Icon'
 export * from './IconButton/IconButton'
 export * from './Pill/Pill'
