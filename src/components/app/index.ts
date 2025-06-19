@@ -1,4 +1,5 @@
 export * from './CategoryPill/CategoryPill'
 export * from './CitiesList/CitiesList'
 export * from './CityCard/CityCard'
+export * from './CityDetailsHeader/CityDetailsHeader'
 export * from './CityFilters/CityFilters'
