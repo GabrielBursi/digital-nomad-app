@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 
 import MapView from 'react-native-maps'
 
-import { Box, Text } from '@/components'
+import { Box, Text } from '@/components/ui'
 import { useAppTheme } from '@/hooks'
 
 import type { CityDetailsMapProps } from './CityDetailsMap.types'

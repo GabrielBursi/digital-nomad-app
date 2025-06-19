@@ -3,7 +3,7 @@ import { StyleSheet, useWindowDimensions } from 'react-native'
 
 import MapView from 'react-native-maps'
 
-import { BottomSheet, Box, IconButton } from '@/components'
+import { BottomSheet, Box, IconButton } from '@/components/ui'
 import { useAppTheme } from '@/hooks'
 
 import type { BottomSheetMapProps } from './BottomSheetMap.types'

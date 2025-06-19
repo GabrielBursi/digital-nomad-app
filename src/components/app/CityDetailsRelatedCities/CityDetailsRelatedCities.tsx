@@ -3,8 +3,10 @@ import { ScrollView, useWindowDimensions } from 'react-native'
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { Box, CityCard, Text } from '@/components'
+import { Box, Text } from '@/components/ui'
 import { useAppTheme, useRelatedCities } from '@/hooks'
+
+import { CityCard } from '../CityCard/CityCard'
 
 import type { CityDetailsRelatedCitiesProps } from './CityDetailsRelatedCities.types'
 

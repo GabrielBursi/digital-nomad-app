@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import { Accordion, Box, Text } from '@/components'
+import { Accordion, Box, Text } from '@/components/ui'
 
 import type { CityDetailsTouristAttractionsProps } from './CityDetailsTouristAttractions.types'
 

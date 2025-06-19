@@ -7,11 +7,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import {
 	BlackOpacity,
 	Box,
-	CategoryPill,
 	Icon,
 	IconButton,
 	PILL_HEIGHT,
-} from '@/components'
+} from '@/components/ui'
+
+import { CategoryPill } from '../CategoryPill/CategoryPill'
 
 import type { CityDetailsHeaderProps } from './CityDetailsHeader.types'
 

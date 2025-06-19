@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import { Box } from '@/components'
+import { Box } from '../Box/Box'
 
 import type { DividerProps } from './Divider.types'
 

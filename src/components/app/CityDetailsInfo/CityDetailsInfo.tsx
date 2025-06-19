@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 
-import { Box, Text } from '@/components'
+import { Box, Text } from '@/components/ui'
 
 import type { CityDetailsInfoProps } from './CityDetailsInfo.types'
 
