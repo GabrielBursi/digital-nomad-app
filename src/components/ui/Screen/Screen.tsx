@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react'
+import { ScrollView, View } from 'react-native'
 
 import { Box } from '@/components/ui/Box/Box'
 
@@ -6,16 +7,19 @@ import { ScreenProps } from './Screen.types'
 
 export const Screen = ({
 	children,
+	scrollable = false,
 	...boxProps
 }: Readonly<PropsWithChildren<ScreenProps>>) => {
+	const Container = scrollable ? ScrollView : View
+
 	return (
 		<Box
-			backgroundColor="background"
 			flex={1}
-			paddingHorizontal="s16"
+			backgroundColor="background"
+			paddingHorizontal="padding"
 			{...boxProps}
 		>
-			{children}
+			<Container>{children}</Container>
 		</Box>
 	)
 }
