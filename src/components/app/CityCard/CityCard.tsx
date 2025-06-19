@@ -1,31 +1,37 @@
 import React, { memo } from 'react'
-import { ImageBackground, StyleSheet } from 'react-native'
+import { ImageBackground, Pressable, StyleSheet } from 'react-native'
+
+import { Link } from 'expo-router'
 
 import { BlackOpacity, Box, Icon, Text } from '@/components/ui'
 import { useAppTheme } from '@/hooks'
 
 import { CityCardProps } from './CityCard.types'
 
-const CityCardMemoized = ({ cityPreview }: Readonly<CityCardProps>) => {
+const CityCardMemoized = ({ cityPreview, style }: Readonly<CityCardProps>) => {
 	const { borderRadii } = useAppTheme()
 	return (
-		<ImageBackground
-			source={cityPreview.coverImage}
-			style={styles.cityImage}
-			imageStyle={{ borderRadius: borderRadii.default }}
-		>
-			<BlackOpacity />
-			<Box flex={1} padding="s24" justifyContent="space-between">
-				<Box alignSelf="flex-end">
-					<Icon name="Favorite-outline" color="text" />
-				</Box>
+		<Link push href={`/city-details/${cityPreview.id}`} asChild>
+			<Pressable>
+				<ImageBackground
+					source={cityPreview.coverImage}
+					style={[styles.cityImage, style]}
+					imageStyle={{ borderRadius: borderRadii.default }}
+				>
+					<BlackOpacity />
+					<Box flex={1} padding="s24" justifyContent="space-between">
+						<Box alignSelf="flex-end">
+							<Icon name="Favorite-outline" color="text" />
+						</Box>
 
-				<Box>
-					<Text variant="title22">{cityPreview.name}</Text>
-					<Text variant="text16">{cityPreview.country}</Text>
-				</Box>
-			</Box>
-		</ImageBackground>
+						<Box>
+							<Text variant="title22">{cityPreview.name}</Text>
+							<Text variant="text16">{cityPreview.country}</Text>
+						</Box>
+					</Box>
+				</ImageBackground>
+			</Pressable>
+		</Link>
 	)
 }
 
