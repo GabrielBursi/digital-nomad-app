@@ -1,3 +1,7 @@
+import { BoxProps } from '@/components/ui/Box/Box.types'
 import type { CityPreview } from '@/types/city'
 
-export type CityCardProps = { cityPreview: CityPreview }
+export type CityCardProps = { cityPreview: CityPreview } & Pick<
+	BoxProps,
+	'style'
+>

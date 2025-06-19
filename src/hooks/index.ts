@@ -1,3 +1,5 @@
 export * from './useAppTheme'
 export * from './useCitiesFilter'
+export * from './useCityDetails'
 export * from './useDebounce'
+export * from './useRelatedCities'
