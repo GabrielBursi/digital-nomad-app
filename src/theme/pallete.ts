@@ -5,4 +5,5 @@ export const palette = {
 	stoneGrey: '#5C5C5C',
 	pureWhite: '#FFFFFF',
 	transparent: 'transparent',
+	shadow: 'rgba(0,0,0,0.7)',
 } as const

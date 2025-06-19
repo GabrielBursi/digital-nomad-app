@@ -1,5 +1,6 @@
 export * from './Accordion/Accordion'
 export * from './BlackOpacity/BlackOpacity'
+export * from './BottomSheet/BottomSheet'
 export * from './Box/Box'
 export * from './Divider/Divider'
 export * from './Icon/Icon'
