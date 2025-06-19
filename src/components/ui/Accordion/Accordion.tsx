@@ -66,7 +66,7 @@ const AccordionHeader = ({
 			</Box>
 
 			<Animated.Image
-				source={require('@/assets/images/chevron-down.png') as number}
+				source={require('../../../../assets/images/chevron-down.png') as number}
 				style={[iconAnimatedStyle, styles.icon]}
 			/>
 		</Animated.View>
