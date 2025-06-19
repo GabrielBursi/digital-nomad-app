@@ -2,6 +2,7 @@ import React, { memo, useRef, useState } from 'react'
 import { FlatList } from 'react-native'
 
 import { useScrollToTop } from '@react-navigation/native'
+import Animated, { FadingTransition } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Box } from '@/components/ui/Box/Box'
@@ -33,7 +34,8 @@ const CitiesListMemoized = (props: Readonly<CitiesListProps>) => {
 	useScrollToTop(flatListRef)
 
 	return (
-		<FlatList
+		<Animated.FlatList
+			itemLayoutAnimation={FadingTransition.duration(500)}
 			{...props}
 			ref={flatListRef}
 			contentContainerStyle={{
