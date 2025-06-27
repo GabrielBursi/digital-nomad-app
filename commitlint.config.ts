@@ -25,7 +25,16 @@ const Configuration: UserConfig = {
 		'scope-enum': [
 			2,
 			'always',
-			['ui', 'auth', 'theme', 'types', 'city', 'category', 'attraction'],
+			[
+				'ui',
+				'auth',
+				'theme',
+				'types',
+				'city',
+				'category',
+				'attraction',
+				'supabase',
+			],
 		],
 	},
 }
