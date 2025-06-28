@@ -11,6 +11,7 @@ import {
 	IconButton,
 	PILL_HEIGHT,
 } from '@/components/ui'
+import { useImageSource } from '@/hooks'
 
 import { CategoryPill } from '../CategoryPill/CategoryPill'
 
@@ -21,11 +22,12 @@ const CityDetailsHeaderMemoized = ({
 	categories,
 }: Readonly<CityDetailsHeaderProps>) => {
 	const { top } = useSafeAreaInsets()
+	const coverImageSource = useImageSource(coverImage)
 
 	return (
 		<Box>
 			<ImageBackground
-				source={coverImage}
+				source={coverImageSource}
 				style={styles.boxImageBackground}
 				imageStyle={styles.imageBackground}
 			>

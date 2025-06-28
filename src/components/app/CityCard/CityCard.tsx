@@ -4,17 +4,18 @@ import { ImageBackground, Pressable, StyleSheet } from 'react-native'
 import { Link } from 'expo-router'
 
 import { BlackOpacity, Box, Icon, Text } from '@/components/ui'
-import { useAppTheme } from '@/hooks'
+import { useAppTheme, useImageSource } from '@/hooks'
 
 import { CityCardProps } from './CityCard.types'
 
 const CityCardMemoized = ({ cityPreview, style }: Readonly<CityCardProps>) => {
 	const { borderRadii } = useAppTheme()
+	const coverImage = useImageSource(cityPreview.coverImage)
 	return (
 		<Link push href={`/city-details/${cityPreview.id}`} asChild>
 			<Pressable>
 				<ImageBackground
-					source={cityPreview.coverImage}
+					source={coverImage}
 					style={[styles.cityImage, style]}
 					imageStyle={{ borderRadius: borderRadii.default }}
 				>
