@@ -1,14 +1,15 @@
-export type CategoryCode =
-	| 'ADVENTURE'
-	| 'BEACH'
-	| 'CULTURE'
-	| 'GASTRONOMY'
-	| 'HISTORY'
-	| 'LUXURY'
-	| 'NATURE'
-	| 'SHOPPING'
-	| 'URBAN'
-	| 'FAVORITE'
+export enum CategoryCode {
+	ADVENTURE = 'ADVENTURE',
+	BEACH = 'BEACH',
+	CULTURE = 'CULTURE',
+	GASTRONOMY = 'GASTRONOMY',
+	HISTORY = 'HISTORY',
+	LUXURY = 'LUXURY',
+	NATURE = 'NATURE',
+	SHOPPING = 'SHOPPING',
+	URBAN = 'URBAN',
+	FAVORITE = 'FAVORITE',
+}
 
 export type Category = {
 	id: string

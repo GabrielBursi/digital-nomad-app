@@ -1,63 +1,63 @@
-import type { Category } from '@/types/category'
+import { CategoryCode, type Category } from '@/types/category'
 
 export const categories: Category[] = [
 	{
 		id: 'star',
-		code: 'FAVORITE',
+		code: CategoryCode.FAVORITE,
 		name: 'Destaques',
 		description: 'Os preferidos dos viajantes',
 	},
 	{
 		id: 'urban',
-		code: 'URBAN',
+		code: CategoryCode.URBAN,
 		name: 'Urbano',
 		description: 'Explore a vida na cidade',
 	},
 	{
 		id: 'beach',
-		code: 'BEACH',
+		code: CategoryCode.BEACH,
 		name: 'Praia',
 		description: 'Sombra e água fresca',
 	},
 	{
 		id: 'nature',
-		code: 'NATURE',
+		code: CategoryCode.NATURE,
 		name: 'Natureza',
 		description: 'Os melhores destinos para descansar',
 	},
 	{
 		id: 'culture',
-		code: 'CULTURE',
+		code: CategoryCode.CULTURE,
 		name: 'Cultura',
 		description: 'Riqueza cultural e tradições',
 	},
 	{
 		id: 'shopping',
-		code: 'SHOPPING',
+		code: CategoryCode.SHOPPING,
 		name: 'Compras',
 		description: 'Destinos para quem adora fazer compras',
 	},
 	{
 		id: 'history',
-		code: 'HISTORY',
+		code: CategoryCode.HISTORY,
 		name: 'História',
 		description: 'Cidades ricas em história e patrimônio',
 	},
 	{
 		id: 'adventure',
-		code: 'ADVENTURE',
+		code: CategoryCode.ADVENTURE,
 		name: 'Aventura',
 		description: 'Os melhores lugares para aventura',
 	},
 	{
 		id: 'luxury',
-		code: 'LUXURY',
+		code: CategoryCode.LUXURY,
 		name: 'Luxo',
 		description: 'Experiências de viagem de luxo',
 	},
 	{
 		id: 'gastronomy',
-		code: 'GASTRONOMY',
+		code: CategoryCode.GASTRONOMY,
 		name: 'Gastronomia',
 		description: 'Explore a culinária local',
 	},
