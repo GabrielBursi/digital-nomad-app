@@ -62,7 +62,7 @@ const ToCity = (data: SupabaseCityWithFullInfo): City => {
 		data.latitude === null ||
 		data.longitude === null
 	)
-		throw new Error('Type not supported', { cause: 'ToCity' })
+		throw new TypeError('Type not supported', { cause: 'ToCity' })
 
 	return {
 		id: data.id,
@@ -87,7 +87,7 @@ const ToCityPreview = (row: SupabaseCityPreviewRow): CityPreview => {
 		row.country === null ||
 		row.cover_image === null
 	)
-		throw new Error('Type not supported', { cause: 'ToCityPreview' })
+		throw new TypeError('Type not supported', { cause: 'ToCityPreview' })
 
 	return {
 		id: row.id,
@@ -101,7 +101,7 @@ const ToTouristAttractions = (
 	row: SupabaseTouristAttractionRow
 ): TouristAttraction => {
 	if (row.city_id === null)
-		throw new Error('Type not supported', { cause: 'ToTouristAttractions' })
+		throw new TypeError('Type not supported', { cause: 'ToTouristAttractions' })
 
 	return {
 		id: row.id,
@@ -118,16 +118,20 @@ const isValidCategoryCode = (value: unknown): value is CategoryCode => {
 	)
 }
 
-const ToCategory = (row: SupabaseCategoryRow): Category => {
-	if (!isValidCategoryCode(row.code)) {
-		throw new Error('Invalid category code', { cause: row.code })
+const ToCategoryCode = (value: unknown): CategoryCode => {
+	if (!isValidCategoryCode(value)) {
+		throw new TypeError('Invalid category code', { cause: value })
 	}
 
+	return value
+}
+
+const ToCategory = (row: SupabaseCategoryRow): Category => {
 	return {
 		id: row.id,
 		description: row.description,
 		name: row.name,
-		code: row.code,
+		code: ToCategoryCode(row.code),
 	}
 }
 
@@ -136,4 +140,5 @@ export const SupabaseAdapters = {
 	ToCityPreview,
 	ToTouristAttractions,
 	ToCategory,
+	ToCategoryCode,
 } as const

@@ -9,3 +9,8 @@ export type SupabaseCityPreviewRow = {
 	country: string | null
 	cover_image: string | null
 }
+
+export type SupabaseCityFilters = {
+	name?: string
+	categoryId?: string | null
+}
