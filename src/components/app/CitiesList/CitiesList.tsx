@@ -6,8 +6,7 @@ import Animated, { FadingTransition } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Box } from '@/components/ui/Box/Box'
-import { categories } from '@/data'
-import { useAppTheme, useCities, useDebounce } from '@/hooks'
+import { useAppTheme, useCategories, useCities, useDebounce } from '@/hooks'
 import type { CityPreview } from '@/types/city'
 
 import { CityCard } from '../CityCard/CityCard'
@@ -29,6 +28,7 @@ const CitiesListMemoized = (props: Readonly<CitiesListProps>) => {
 		name: debouncedCityName,
 		categoryId: selectedCategoryId,
 	})
+	const { categories } = useCategories()
 
 	const flatListRef = useRef<FlatList<CityPreview>>(null)
 	useScrollToTop(flatListRef)

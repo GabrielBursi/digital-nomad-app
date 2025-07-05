@@ -1,4 +1,5 @@
 export * from './useAppTheme'
+export * from './useCategories'
 export * from './useCities'
 export * from './useCitiesFilter'
 export * from './useCityDetails'
