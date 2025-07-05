@@ -13,7 +13,7 @@ import type { CityDetailsRelatedCitiesProps } from './CityDetailsRelatedCities.t
 const CityDetailsRelatedCitiesMemoized = ({
 	id,
 }: Readonly<CityDetailsRelatedCitiesProps>) => {
-	const cities = useRelatedCities(id)
+	const { relatedCities } = useRelatedCities(id)
 
 	const { spacing } = useAppTheme()
 	const { bottom } = useSafeAreaInsets()
@@ -35,7 +35,7 @@ const CityDetailsRelatedCitiesMemoized = ({
 					paddingHorizontal: spacing.padding,
 				}}
 			>
-				{cities.map((city) => (
+				{relatedCities.map((city) => (
 					<CityCard
 						key={city.id}
 						cityPreview={city}

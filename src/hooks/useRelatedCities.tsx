@@ -1,6 +1,23 @@
-import { cities } from '@/data'
-import type { CityPreview } from '@/types/city'
+import { useQuery } from '@tanstack/react-query'
 
-export const useRelatedCities = (relatedCitiesIds: string): CityPreview[] => {
-	return cities.filter((city) => relatedCitiesIds.includes(city.id))
+import { SupabaseServices } from '@/supabase'
+
+export const useRelatedCities = (cityId: string) => {
+	const {
+		data = [],
+		error,
+		isFetching,
+	} = useQuery({
+		queryKey: ['relatedCities', cityId],
+		enabled: false,
+		queryFn: () => SupabaseServices.GetRelatedCities(cityId),
+		staleTime: Infinity,
+		gcTime: Infinity,
+	})
+
+	return {
+		relatedCities: data,
+		error,
+		isLoading: isFetching,
+	} as const
 }
