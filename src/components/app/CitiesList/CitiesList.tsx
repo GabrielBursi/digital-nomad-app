@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Box } from '@/components/ui/Box/Box'
 import { categories } from '@/data'
-import { useAppTheme, useCitiesFilter, useDebounce } from '@/hooks'
+import { useAppTheme, useCities, useDebounce } from '@/hooks'
 import type { CityPreview } from '@/types/city'
 
 import { CityCard } from '../CityCard/CityCard'
@@ -25,7 +25,7 @@ const CitiesListMemoized = (props: Readonly<CitiesListProps>) => {
 		null
 	)
 
-	const { cityPreviewList } = useCitiesFilter({
+	const { cities } = useCities({
 		name: debouncedCityName,
 		categoryId: selectedCategoryId,
 	})
@@ -43,7 +43,7 @@ const CitiesListMemoized = (props: Readonly<CitiesListProps>) => {
 				paddingTop: top,
 				paddingBottom: spacing.padding,
 			}}
-			data={cityPreviewList}
+			data={cities}
 			renderItem={({ item: city }) => (
 				<Box paddingHorizontal="padding">
 					<CityCard cityPreview={city} />

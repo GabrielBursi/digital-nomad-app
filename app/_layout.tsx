@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import { ThemeProvider } from '@shopify/restyle'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 
 import { theme } from '@/theme'
 import 'react-native-reanimated'
+
+const queryClient = new QueryClient()
 
 export default function RootLayout() {
 	const [loaded] = useFonts({
@@ -43,17 +46,19 @@ export default function RootLayout() {
 	if (!loaded) return null
 
 	return (
-		<ThemeProvider theme={theme}>
-			<Stack
-				screenOptions={{
-					contentStyle: { backgroundColor: theme.colors.background },
-				}}
-			>
-				<Stack.Screen name="(protected)" options={{ headerShown: false }} />
-				<Stack.Screen name="+not-found" />
-				<Stack.Screen name="sign-in" />
-			</Stack>
-			<StatusBar style="light" />
-		</ThemeProvider>
+		<QueryClientProvider client={queryClient}>
+			<ThemeProvider theme={theme}>
+				<Stack
+					screenOptions={{
+						contentStyle: { backgroundColor: theme.colors.background },
+					}}
+				>
+					<Stack.Screen name="(protected)" options={{ headerShown: false }} />
+					<Stack.Screen name="+not-found" />
+					<Stack.Screen name="sign-in" />
+				</Stack>
+				<StatusBar style="light" />
+			</ThemeProvider>
+		</QueryClientProvider>
 	)
 }
