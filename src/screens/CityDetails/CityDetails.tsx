@@ -19,7 +19,7 @@ import { useCityDetails } from '@/hooks'
 
 export const CityDetailsScreen = () => {
 	const { id } = useLocalSearchParams<{ id: string }>()
-	const city = useCityDetails(id)
+	const { city } = useCityDetails(id)
 
 	const bottomSheetIsOpen = useSharedValue(false)
 
@@ -58,7 +58,7 @@ export const CityDetailsScreen = () => {
 				</Pressable>
 
 				<Divider paddingHorizontal="padding" />
-				<CityDetailsRelatedCities relatedCitiesIds={city.relatedCitiesIds} />
+				<CityDetailsRelatedCities id={city.id} />
 			</Screen>
 			<BottomSheetMap
 				location={city.location}

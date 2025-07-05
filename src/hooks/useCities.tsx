@@ -11,7 +11,7 @@ export const useCities = (filters: SupabaseCityFilters) => {
 	} = useQuery({
 		queryKey: ['cities', filters],
 		enabled: false,
-		queryFn: () => SupabaseServices.FindAll(filters),
+		queryFn: () => SupabaseServices.FindAllCities(filters),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})

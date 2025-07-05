@@ -5,7 +5,7 @@ import type { SupabaseCityFilters } from '@/types/supabase'
 import { SupabaseAdapters } from './supabaseAdapters'
 import { supabaseClient } from './supabaseClient'
 
-const FindAll = async (
+const FindAllCities = async (
 	filters: SupabaseCityFilters
 ): Promise<CityPreview[]> => {
 	const fields = 'id,name,country,cover_image'
@@ -40,7 +40,7 @@ const ListCategory = async (): Promise<Category[]> => {
 	)
 }
 
-const FindById = async (id: string): Promise<City | null> => {
+const FindCityById = async (id: string): Promise<City | null> => {
 	const { data } = await supabaseClient
 		.from('cities_with_full_info')
 		.select('*')
@@ -61,8 +61,8 @@ const GetRelatedCities = async (cityId: string): Promise<CityPreview[]> => {
 }
 
 export const SupabaseServices = {
-	FindAll,
+	FindAllCities,
 	ListCategory,
-	FindById,
+	FindCityById,
 	GetRelatedCities,
 } as const

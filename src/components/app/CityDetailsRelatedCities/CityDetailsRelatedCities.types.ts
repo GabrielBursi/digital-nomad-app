@@ -1,3 +1,3 @@
 import { City } from '@/types/city'
 
-export type CityDetailsRelatedCitiesProps = Pick<City, 'relatedCitiesIds'>
+export type CityDetailsRelatedCitiesProps = Pick<City, 'id'>

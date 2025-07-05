@@ -11,9 +11,9 @@ import { CityCard } from '../CityCard/CityCard'
 import type { CityDetailsRelatedCitiesProps } from './CityDetailsRelatedCities.types'
 
 const CityDetailsRelatedCitiesMemoized = ({
-	relatedCitiesIds,
+	id,
 }: Readonly<CityDetailsRelatedCitiesProps>) => {
-	const cities = useRelatedCities(relatedCitiesIds)
+	const cities = useRelatedCities(id)
 
 	const { spacing } = useAppTheme()
 	const { bottom } = useSafeAreaInsets()
