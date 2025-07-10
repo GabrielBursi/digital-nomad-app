@@ -10,7 +10,6 @@ export const useCities = (filters: SupabaseCityFilters) => {
 		isFetching,
 	} = useQuery({
 		queryKey: ['cities', filters],
-		enabled: false,
 		queryFn: () => SupabaseServices.FindAllCities(filters),
 		staleTime: Infinity,
 		gcTime: Infinity,

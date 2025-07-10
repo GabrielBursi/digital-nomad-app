@@ -9,7 +9,6 @@ export const useCityDetails = (cityId: string) => {
 		error,
 	} = useQuery({
 		queryKey: ['city', cityId],
-		enabled: false,
 		queryFn: () => SupabaseServices.FindCityById(cityId),
 		staleTime: Infinity,
 		gcTime: Infinity,

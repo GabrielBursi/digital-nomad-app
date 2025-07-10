@@ -9,7 +9,6 @@ export const useRelatedCities = (cityId: string) => {
 		isFetching,
 	} = useQuery({
 		queryKey: ['relatedCities', cityId],
-		enabled: false,
 		queryFn: () => SupabaseServices.GetRelatedCities(cityId),
 		staleTime: Infinity,
 		gcTime: Infinity,

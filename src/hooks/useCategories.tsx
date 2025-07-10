@@ -9,7 +9,6 @@ export const useCategories = () => {
 		error,
 	} = useQuery({
 		queryKey: ['categories'],
-		enabled: false,
 		queryFn: () => SupabaseServices.ListCategory(),
 		staleTime: Infinity,
 		gcTime: Infinity,
