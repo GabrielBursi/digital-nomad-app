@@ -6,6 +6,6 @@ export type PayloadAuthSignIn = {
 }
 
 export interface AuthRepo {
-	signIn: (payload: PayloadAuthSignIn) => Promise<AuthUser | null>
+	signIn: (payload: PayloadAuthSignIn) => Promise<AuthUser>
 	signOut: () => Promise<void>
 }

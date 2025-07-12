@@ -35,6 +35,7 @@ const Configuration: UserConfig = {
 				'attraction',
 				'supabase',
 				'auth',
+				'feedback',
 			],
 		],
 	},
