@@ -1,7 +1,9 @@
+import { AuthRepo } from './auth'
 import { CategoryRepo } from './category'
 import { CityRepo } from './city'
 
 export interface Repositories {
-	city: CityRepo
+	auth: AuthRepo
 	category: CategoryRepo
+	city: CityRepo
 }

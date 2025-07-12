@@ -34,6 +34,7 @@ const Configuration: UserConfig = {
 				'category',
 				'attraction',
 				'supabase',
+				'auth',
 			],
 		],
 	},
