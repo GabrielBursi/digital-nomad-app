@@ -1,15 +1,17 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { supabaseCategoryRepo } from '@/supabase'
+import { useRepository } from '@/infra/repository'
 
 export const useCategories = () => {
+	const { category } = useRepository()
+
 	const {
 		data = [],
 		isFetching,
 		error,
 	} = useQuery({
 		queryKey: ['categories'],
-		queryFn: () => supabaseCategoryRepo.findAll(),
+		queryFn: () => category.findAll(),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})

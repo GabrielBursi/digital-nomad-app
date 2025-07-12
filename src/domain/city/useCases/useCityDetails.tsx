@@ -1,15 +1,17 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { supabaseCityRepo } from '@/supabase'
+import { useRepository } from '@/infra/repository'
 
 export const useCityDetails = (cityId: string) => {
+	const { city } = useRepository()
+
 	const {
 		data = null,
 		isFetching,
 		error,
 	} = useQuery({
 		queryKey: ['city', cityId],
-		queryFn: () => supabaseCityRepo.findById(cityId),
+		queryFn: () => city.findById(cityId),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})

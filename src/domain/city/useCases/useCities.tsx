@@ -1,16 +1,18 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { CityFindAllFilters } from '@/domain/city'
-import { supabaseCityRepo } from '@/supabase'
+import { useRepository } from '@/infra/repository'
 
 export const useCities = (filters: CityFindAllFilters) => {
+	const { city } = useRepository()
+
 	const {
 		data = [],
 		error,
 		isFetching,
 	} = useQuery({
 		queryKey: ['cities', filters],
-		queryFn: () => supabaseCityRepo.findAll(filters),
+		queryFn: () => city.findAll(filters),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})
