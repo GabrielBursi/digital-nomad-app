@@ -1,5 +1,5 @@
+import { Category, CategoryCode } from '@/domain/category'
 import { ENV_VARIABLES } from '@/env'
-import { Category, CategoryCode } from '@/types/category'
 import type { City, CityPreview } from '@/types/city'
 import type {
 	SupabaseCategoryRow,

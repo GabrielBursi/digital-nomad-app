@@ -1,4 +1,5 @@
-import { Category } from './category'
+import { Category } from '@/domain/category'
+
 import { TouristAttraction } from './touristAttraction'
 
 export type City = {

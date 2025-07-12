@@ -1,4 +1,4 @@
-import type { Category } from '@/types/category'
+import type { Category } from '@/domain/category'
 
 export type CityFiltersProps = {
 	categories: Category[]

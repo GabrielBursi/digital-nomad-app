@@ -1,4 +1,4 @@
-import type { Category } from '@/types/category'
+import type { Category } from '@/domain/category'
 import type { City, CityPreview } from '@/types/city'
 import type { SupabaseCityFilters } from '@/types/supabase'
 
