@@ -6,8 +6,10 @@ import Animated, { FadingTransition } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Box } from '@/components/ui/Box/Box'
+import { useCategories } from '@/domain/category/useCases'
 import type { CityPreview } from '@/domain/city'
-import { useAppTheme, useCategories, useCities, useDebounce } from '@/hooks'
+import { useCities } from '@/domain/city/useCases'
+import { useAppTheme, useDebounce } from '@/hooks'
 
 import { CityCard } from '../CityCard/CityCard'
 import { CityFilters } from '../CityFilters/CityFilters'

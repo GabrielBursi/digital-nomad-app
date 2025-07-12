@@ -4,7 +4,8 @@ import { ScrollView, useWindowDimensions } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Box, Text } from '@/components/ui'
-import { useAppTheme, useRelatedCities } from '@/hooks'
+import { useRelatedCities } from '@/domain/city/useCases'
+import { useAppTheme } from '@/hooks'
 
 import { CityCard } from '../CityCard/CityCard'
 

@@ -15,7 +15,7 @@ import {
 	Screen,
 	Text,
 } from '@/components'
-import { useCityDetails } from '@/hooks'
+import { useCityDetails } from '@/domain/city/useCases'
 
 export const CityDetailsScreen = () => {
 	const { id } = useLocalSearchParams<{ id: string }>()
