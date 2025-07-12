@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { SupabaseServices } from '@/supabase'
+import { supabaseCityRepo } from '@/supabase'
 
 export const useCityDetails = (cityId: string) => {
 	const {
@@ -9,7 +9,7 @@ export const useCityDetails = (cityId: string) => {
 		error,
 	} = useQuery({
 		queryKey: ['city', cityId],
-		queryFn: () => SupabaseServices.FindCityById(cityId),
+		queryFn: () => supabaseCityRepo.findById(cityId),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})

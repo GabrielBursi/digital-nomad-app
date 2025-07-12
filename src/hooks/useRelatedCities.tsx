@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { SupabaseServices } from '@/supabase'
+import { supabaseCityRepo } from '@/supabase'
 
 export const useRelatedCities = (cityId: string) => {
 	const {
@@ -9,7 +9,7 @@ export const useRelatedCities = (cityId: string) => {
 		isFetching,
 	} = useQuery({
 		queryKey: ['relatedCities', cityId],
-		queryFn: () => SupabaseServices.GetRelatedCities(cityId),
+		queryFn: () => supabaseCityRepo.getRelatedCities(cityId),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})

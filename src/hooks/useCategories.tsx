@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { SupabaseServices } from '@/supabase'
+import { supabaseCategoryRepo } from '@/supabase'
 
 export const useCategories = () => {
 	const {
@@ -9,7 +9,7 @@ export const useCategories = () => {
 		error,
 	} = useQuery({
 		queryKey: ['categories'],
-		queryFn: () => SupabaseServices.ListCategory(),
+		queryFn: () => supabaseCategoryRepo.findAll(),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})

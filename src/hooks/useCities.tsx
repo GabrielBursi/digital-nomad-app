@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { CityFindAllFilters } from '@/domain/city'
-import { SupabaseServices } from '@/supabase'
+import { supabaseCityRepo } from '@/supabase'
 
 export const useCities = (filters: CityFindAllFilters) => {
 	const {
@@ -10,7 +10,7 @@ export const useCities = (filters: CityFindAllFilters) => {
 		isFetching,
 	} = useQuery({
 		queryKey: ['cities', filters],
-		queryFn: () => SupabaseServices.FindAllCities(filters),
+		queryFn: () => supabaseCityRepo.findAll(filters),
 		staleTime: Infinity,
 		gcTime: Infinity,
 	})
