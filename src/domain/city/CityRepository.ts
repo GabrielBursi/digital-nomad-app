@@ -7,6 +7,6 @@ export type CityFindAllFilters = {
 
 export interface CityRepo {
 	findAll(filters: CityFindAllFilters): Promise<CityPreview[]>
-	findById(id: string): Promise<City>
+	findById(id: string): Promise<City | null>
 	getRelatedCities(cityId: string): Promise<CityPreview[]>
 }
