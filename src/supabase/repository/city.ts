@@ -1,5 +1,9 @@
-import type { City, CityFindAllFilters, CityPreview } from '@/domain/city'
-import { CityRepo } from '@/domain/city'
+import type {
+	City,
+	CityFindAllFilters,
+	CityPreview,
+	CityRepo,
+} from '@/domain/city'
 
 import { SupabaseAdapters } from '../supabaseAdapters'
 import { supabaseClient } from '../supabaseClient'

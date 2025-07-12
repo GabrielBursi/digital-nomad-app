@@ -1,9 +1,9 @@
 import { authUsers } from '@/data'
-import { AuthRepo, AuthUser } from '@/domain/auth'
+import type { AuthRepo, AuthUser, PayloadAuthSignIn } from '@/domain/auth'
 
 export class MemoryAuthRepo implements AuthRepo {
-	async signIn(email: string, password: string): Promise<AuthUser | null> {
-		await Promise.resolve(password)
+	async signIn({ email }: PayloadAuthSignIn): Promise<AuthUser | null> {
+		await Promise.resolve()
 		return authUsers.find((user) => user.email === email) ?? null
 	}
 

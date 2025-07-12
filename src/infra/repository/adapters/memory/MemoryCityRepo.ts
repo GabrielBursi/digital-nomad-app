@@ -1,5 +1,10 @@
 import { cities } from '@/data'
-import { City, CityFindAllFilters, CityPreview, CityRepo } from '@/domain/city'
+import type {
+	City,
+	CityFindAllFilters,
+	CityPreview,
+	CityRepo,
+} from '@/domain/city'
 
 export class MemoryCityRepo implements CityRepo {
 	async findAll({

@@ -1,4 +1,4 @@
-import { Repositories } from '@/domain/Repositories'
+import type { Repositories } from '@/domain/Repositories'
 import { MemoryRepositories } from '@/infra/repository'
 
 import { supabaseCategoryRepo } from './category'
