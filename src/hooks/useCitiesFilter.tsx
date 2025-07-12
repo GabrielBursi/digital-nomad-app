@@ -1,5 +1,5 @@
 import { cities } from '@/data'
-import type { CityPreview } from '@/types/city'
+import type { CityPreview } from '@/domain/city'
 
 type CityFilter = {
 	name?: string

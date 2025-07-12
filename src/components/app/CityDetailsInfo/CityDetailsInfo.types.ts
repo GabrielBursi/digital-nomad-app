@@ -1,4 +1,4 @@
-import { City } from '@/types/city'
+import { City } from '@/domain/city'
 
 export type CityDetailsInfoProps = Pick<
 	City,

@@ -1,12 +1,11 @@
 import type { Category } from '@/domain/category'
-import type { City, CityPreview } from '@/types/city'
-import type { SupabaseCityFilters } from '@/types/supabase'
+import type { City, CityFindAllFilters, CityPreview } from '@/domain/city'
 
 import { SupabaseAdapters } from './supabaseAdapters'
 import { supabaseClient } from './supabaseClient'
 
 const FindAllCities = async (
-	filters: SupabaseCityFilters
+	filters: CityFindAllFilters
 ): Promise<CityPreview[]> => {
 	const fields = 'id,name,country,cover_image'
 

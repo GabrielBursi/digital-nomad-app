@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-import type { City, CityPreview } from '@/types/city'
+import type { City, CityPreview } from '@/domain/city'
 
 import { categories } from './categories'
 

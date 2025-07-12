@@ -1,6 +1,5 @@
 import { Category } from '@/domain/category'
-
-import { TouristAttraction } from './touristAttraction'
+import { TouristAttraction } from '@/types/touristAttraction'
 
 export type City = {
 	id: string

@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query'
 
+import { CityFindAllFilters } from '@/domain/city'
 import { SupabaseServices } from '@/supabase'
-import type { SupabaseCityFilters } from '@/types/supabase'
 
-export const useCities = (filters: SupabaseCityFilters) => {
+export const useCities = (filters: CityFindAllFilters) => {
 	const {
 		data = [],
 		error,
