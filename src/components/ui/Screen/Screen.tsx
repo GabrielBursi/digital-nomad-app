@@ -1,6 +1,8 @@
 import React, { PropsWithChildren } from 'react'
 import { ScrollView, View } from 'react-native'
 
+import { SafeAreaView } from 'react-native-safe-area-context'
+
 import { Box } from '@/components/ui/Box/Box'
 
 import { ScreenProps } from './Screen.types'
@@ -19,7 +21,9 @@ export const Screen = ({
 			paddingHorizontal="padding"
 			{...boxProps}
 		>
-			<Container>{children}</Container>
+			<SafeAreaView>
+				<Container>{children}</Container>
+			</SafeAreaView>
 		</Box>
 	)
 }
