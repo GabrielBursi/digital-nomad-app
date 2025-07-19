@@ -11,6 +11,7 @@ export const theme = createTheme({
 		gray2: palette.stoneGrey,
 		...palette,
 	},
+
 	spacing: {
 		s2: 2,
 		s4: 4,
@@ -48,6 +49,11 @@ export const theme = createTheme({
 			fontSize: 16,
 			fontFamily: 'PoppinsSemiBold',
 			lineHeight: 18,
+		},
+		title14: {
+			fontSize: 14,
+			fontFamily: 'PoppinsSemiBold',
+			lineHeight: 16,
 		},
 		text18: {
 			fontSize: 18,
