@@ -36,6 +36,7 @@ const Configuration: UserConfig = {
 				'supabase',
 				'auth',
 				'feedback',
+				'storage',
 			],
 		],
 	},
