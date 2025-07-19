@@ -7,7 +7,7 @@ import {
 	useState,
 } from 'react'
 
-import { router } from 'expo-router'
+import { router, SplashScreen } from 'expo-router'
 
 import { useStorageService } from '@/infra/storage'
 
@@ -20,6 +20,7 @@ type AuthState = {
 	removeAuthUser: () => Promise<void>
 }
 
+void SplashScreen.preventAutoHideAsync()
 export const AuthContext = createContext<AuthState | null>(null)
 
 const AUTH_KEY = 'AUTH_KEY'
@@ -60,6 +61,10 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 	useEffect(() => {
 		void loadAuthUser()
 	}, [loadAuthUser])
+
+	useEffect(() => {
+		if (isReady) SplashScreen.hide()
+	}, [isReady])
 
 	return (
 		<AuthContext.Provider
