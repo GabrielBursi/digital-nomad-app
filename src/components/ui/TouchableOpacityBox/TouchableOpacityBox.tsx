@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { TouchableOpacity as RNTouchableOpacity } from 'react-native'
 
 import {
@@ -13,10 +14,11 @@ import type { Theme } from '@/types/theme'
 
 import type { TouchableOpacityBoxProps } from './TouchableOpacityBox.types'
 
-export const TouchableOpacityBox = createRestyleComponent<
+const TouchableOpacityBoxMemoized = createRestyleComponent<
 	TouchableOpacityBoxProps,
 	Theme
 >(
 	[backgroundColor, spacing, spacingShorthand, layout, border],
 	RNTouchableOpacity
 )
+export const TouchableOpacityBox = memo(TouchableOpacityBoxMemoized)
