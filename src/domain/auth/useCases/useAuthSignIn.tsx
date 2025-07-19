@@ -6,16 +6,19 @@ import { useFeedbackService } from '@/infra/feedback'
 import { useRepository } from '@/infra/repository'
 
 import type { PayloadAuthSignIn } from '../AuthUserRepository'
+import { useAuthContext } from '../context'
 
 export const useAuthSignIn = () => {
 	const { auth } = useRepository()
 	const feedbackService = useFeedbackService()
+	const { saveAuthUser } = useAuthContext()
 
 	const { data, error, isPending, isSuccess, mutate } = useMutation({
 		mutationKey: ['signIn'],
 		mutationFn: auth.signIn,
 		gcTime: Infinity,
-		onSuccess: (authUser) => {
+		onSuccess: async (authUser) => {
+			await saveAuthUser(authUser)
 			feedbackService.send({
 				type: 'success',
 				message: `signed in: ${authUser.email}`,
