@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { Link } from 'expo-router'
 
-import { Button, Logo, Screen, Text, TextInput } from '@/components'
+import { Button, Logo, Screen, Text, TextInput, TextLink } from '@/components'
 import { useAuthSignIn } from '@/domain/auth/useCases'
 
 export const SignInScreen = () => {
@@ -41,14 +41,11 @@ export const SignInScreen = () => {
 				</Text>
 			</Link>
 			<Button title="Entrar" onPress={handleSignIn} />
-			<Link href="/sign-up" asChild>
-				<Text alignSelf="center" mt="s16" color="gray2">
-					Ainda não tem uma conta?{' '}
-					<Text variant="title14" color="primary">
-						Criar
-					</Text>
-				</Text>
-			</Link>
+			<TextLink
+				href="/sign-up"
+				text="Ainda não tem uma conta?"
+				ctaText="Criar"
+			/>
 		</Screen>
 	)
 }
