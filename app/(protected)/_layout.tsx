@@ -11,7 +11,7 @@ export default function ProtectedLayout() {
 		return null
 	}
 
-	if (authUser) {
+	if (!authUser) {
 		return <Redirect href="../sign-in" />
 	}
 	return (
