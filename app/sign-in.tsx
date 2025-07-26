@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { SigninScreen } from '@/screens'
+import { SignInScreen } from '@/screens'
 
 export default function SignIn() {
-	return <SigninScreen />
+	return <SignInScreen />
 }

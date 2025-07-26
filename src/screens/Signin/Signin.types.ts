@@ -1,1 +1,1 @@
-// export type SigninScreenProps = {}
+// export type SignInScreenProps = {}
