@@ -1,11 +1,15 @@
 import React from 'react'
 
-import { Screen, Text } from '@/components'
+import { Button, Header, Logo, Screen } from '@/components'
 
 export const SignUpScreen = () => {
+	const handleSignUp = () => {}
+
 	return (
 		<Screen>
-			<Text>SignUp</Text>
+			<Header title="Criar conta" />
+			<Button title="Criar conta" onPress={handleSignUp} />
+			<Logo />
 		</Screen>
 	)
 }
