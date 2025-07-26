@@ -1,11 +1,15 @@
 import React from 'react'
 
-import { Screen, Text } from '@/components'
+import { Button, Header, Logo, Screen } from '@/components'
 
 export const ResetPasswordScreen = () => {
+	const handleResetPassword = () => {}
+
 	return (
 		<Screen>
-			<Text>ResetPassword</Text>
+			<Header title="Recuperar Senha" />
+			<Button title="Enviar link" onPress={handleResetPassword} />
+			<Logo />
 		</Screen>
 	)
 }
