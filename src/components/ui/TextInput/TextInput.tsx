@@ -64,7 +64,7 @@ const textInputBoxStyle: BoxProps = {
 	borderWidth: 2,
 	borderRadius: 'default',
 	height: 50,
-	mb: 's4',
+	mb: 's20',
 }
 
 export const TextInput = memo(TextInputMemoized)
