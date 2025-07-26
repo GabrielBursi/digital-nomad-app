@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+import { router } from 'expo-router'
 
 import {
 	Button,
@@ -9,11 +11,19 @@ import {
 	TextInput,
 	TextLink,
 } from '@/components'
+import { useAuthSendResetPasswordEmail } from '@/domain/auth/useCases'
 
 export const ResetPasswordScreen = () => {
 	const [email, setEmail] = useState('')
 
-	const handleResetPassword = () => {}
+	const { sendResetPasswordEmail, isSuccess, isLoading } =
+		useAuthSendResetPasswordEmail()
+
+	const handleResetPassword = () => sendResetPasswordEmail(email)
+
+	useEffect(() => {
+		if (!isLoading && isSuccess) router.back()
+	}, [isLoading, isSuccess])
 
 	return (
 		<Screen>
