@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 
-import { Text, TouchableOpacityBox } from '@/components'
+import { Text } from '../Text/Text'
+import { TouchableOpacityBox } from '../TouchableOpacityBox/TouchableOpacityBox'
 
 import type { ButtonColorsConfig, ButtonProps } from './Button.types'
 

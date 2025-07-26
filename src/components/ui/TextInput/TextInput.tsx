@@ -1,10 +1,11 @@
 import React, { memo, useState } from 'react'
 import { TextInput as RNTextInput, StyleSheet } from 'react-native'
 
-import { Box, Text } from '@/components'
 import { useAppTheme } from '@/hooks'
 
+import { Box } from '../Box/Box'
 import type { BoxProps } from '../Box/Box.types'
+import { Text } from '../Text/Text'
 
 import type { TextInputProps } from './TextInput.types'
 

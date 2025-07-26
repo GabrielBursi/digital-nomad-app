@@ -3,7 +3,7 @@ import { Pressable } from 'react-native'
 
 import { router } from 'expo-router'
 
-import { Text } from '@/components'
+import { Text } from '../Text/Text'
 
 import type { TextLinkProps } from './TextLink.types'
 
