@@ -5,8 +5,8 @@ import type {
 	CityRepo,
 } from '@/domain/city'
 
-import { SupabaseAdapters } from '../supabaseAdapters'
-import { supabaseClient } from '../supabaseClient'
+import { SupabaseAdapters } from './supabaseAdapters'
+import { supabaseClient } from './supabaseClient'
 
 const FindAllCities = async (
 	filters: CityFindAllFilters
