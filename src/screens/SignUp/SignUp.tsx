@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { Button, Header, Logo, Screen } from '@/components'
+import { Header, Logo, Screen, SignUpForm } from '@/components'
 
 export const SignUpScreen = () => {
-	const handleSignUp = () => {}
+	const handleSignUp = console.log
 
 	return (
 		<Screen>
 			<Header title="Criar conta" />
-			<Button title="Criar conta" onPress={handleSignUp} />
+			<SignUpForm onSubmit={handleSignUp} />
 			<Logo />
 		</Screen>
 	)
