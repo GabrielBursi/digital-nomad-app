@@ -1,3 +1,4 @@
 export * from './useAuthSendResetPasswordEmail'
 export * from './useAuthSignIn'
 export * from './useAuthSignOut'
+export * from './useAuthSignUp'

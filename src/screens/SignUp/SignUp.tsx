@@ -1,9 +1,19 @@
 import React from 'react'
 
 import { Header, Logo, Screen, SignUpForm } from '@/components'
+import { SignUpSchema } from '@/components/app/SignUpForm/SignUpForm.types'
+import { useAuthSignUp } from '@/domain/auth/useCases'
 
 export const SignUpScreen = () => {
-	const handleSignUp = console.log
+	const { signUp } = useAuthSignUp()
+
+	const handleSignUp = (formValues: SignUpSchema) => {
+		signUp({
+			email: formValues.email,
+			fullname: formValues.fullname,
+			password: formValues.password,
+		})
+	}
 
 	return (
 		<Screen>
