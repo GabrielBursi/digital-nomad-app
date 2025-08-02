@@ -4,9 +4,12 @@ import type {
 	PayloadAuthSignIn,
 	PayloadAuthSignUp,
 } from '@/domain/auth'
+import { ENV_VARIABLES } from '@/env'
 
 import { SupabaseAdapters } from './supabaseAdapters'
 import { supabaseClient } from './supabaseClient'
+
+const { EXPO_PUBLIC_WEB_URL } = ENV_VARIABLES
 
 export class SupabaseAuthRepo implements AuthRepo {
 	signIn = async (payload: PayloadAuthSignIn): Promise<AuthUser> => {
@@ -33,6 +36,8 @@ export class SupabaseAuthRepo implements AuthRepo {
 		await supabaseClient.auth.signOut()
 	}
 	sendResetPasswordEmail = async (email: string): Promise<void> => {
-		await Promise.resolve(email)
+		await supabaseClient.auth.resetPasswordForEmail(email, {
+			redirectTo: `${EXPO_PUBLIC_WEB_URL}/reset-password`,
+		})
 	}
 }

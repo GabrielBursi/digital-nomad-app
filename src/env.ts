@@ -10,6 +10,9 @@ const envSchema = z.object({
 	EXPO_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1, {
 		message: 'EXPO_PUBLIC_SUPABASE_ANON_KEY não pode estar vazio',
 	}),
+	EXPO_PUBLIC_WEB_URL: z.string().min(1, {
+		message: 'EXPO_PUBLIC_SUPABASE_ANON_KEY não pode estar vazio',
+	}),
 })
 
 export const ENV_VARIABLES = envSchema.parse(process.env)
