@@ -1,4 +1,7 @@
-import { Category, CategoryCode } from '@/domain/category'
+import type { AuthUser as SupaBaseAuthUser } from '@supabase/supabase-js'
+
+import type { AuthUser } from '@/domain/auth'
+import { type Category, CategoryCode } from '@/domain/category'
 import type { City, CityPreview } from '@/domain/city'
 import { ENV_VARIABLES } from '@/env'
 import type {
@@ -135,10 +138,31 @@ const ToCategory = (row: SupabaseCategoryRow): Category => {
 	}
 }
 
+const ToAuthUser = (supabaseUser: SupaBaseAuthUser): AuthUser => {
+	if (!supabaseUser.email) {
+		throw new Error('email not found')
+	}
+
+	if (
+		!supabaseUser.user_metadata['fullname'] ||
+		typeof supabaseUser.user_metadata['fullname'] !== 'string'
+	)
+		throw new TypeError('Invalida fullname', {
+			cause: supabaseUser.user_metadata['fullname'],
+		})
+
+	return {
+		id: supabaseUser.id,
+		email: supabaseUser.email,
+		fullname: supabaseUser.user_metadata['fullname'],
+	}
+}
+
 export const SupabaseAdapters = {
 	ToCity,
 	ToCityPreview,
 	ToTouristAttractions,
 	ToCategory,
 	ToCategoryCode,
+	ToAuthUser,
 } as const

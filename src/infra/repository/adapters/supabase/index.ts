@@ -1,12 +1,11 @@
 import type { Repositories } from '@/domain/Repositories'
 
-import { MemoryAuthRepo } from '../memory/MemoryAuthRepo'
-
+import { SupabaseAuthRepo } from './SupabaseAuthRepo'
 import { supabaseCategoryRepo } from './SupabaseCategoryRepo'
 import { supabaseCityRepo } from './SupabaseCityRepo'
 
 export const SupabaseRepositories: Repositories = {
-	auth: new MemoryAuthRepo(),
+	auth: new SupabaseAuthRepo(),
 	category: supabaseCategoryRepo,
 	city: supabaseCityRepo,
 }
