@@ -1,5 +1,11 @@
 import React, { PropsWithChildren } from 'react'
-import { ScrollView, View } from 'react-native'
+import {
+	KeyboardAvoidingView,
+	Platform,
+	ScrollView,
+	StyleSheet,
+	View,
+} from 'react-native'
 
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -15,15 +21,26 @@ export const Screen = ({
 	const Container = scrollable ? ScrollView : View
 
 	return (
-		<Box
-			flex={1}
-			backgroundColor="background"
-			paddingHorizontal="padding"
-			{...boxProps}
+		<KeyboardAvoidingView
+			style={styles.keyboardContainer}
+			behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
 		>
-			<SafeAreaView>
-				<Container>{children}</Container>
-			</SafeAreaView>
-		</Box>
+			<Box
+				flex={1}
+				backgroundColor="background"
+				paddingHorizontal="padding"
+				{...boxProps}
+			>
+				<SafeAreaView>
+					<Container>{children}</Container>
+				</SafeAreaView>
+			</Box>
+		</KeyboardAvoidingView>
 	)
 }
+
+const styles = StyleSheet.create({
+	keyboardContainer: {
+		flex: 1,
+	},
+})

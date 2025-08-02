@@ -15,7 +15,7 @@ export const SignInScreen = () => {
 	}
 
 	return (
-		<Screen>
+		<Screen scrollable>
 			<Logo />
 			<Text variant="title22" alignSelf="center" mb="s16">
 				Bem-vindo

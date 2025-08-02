@@ -16,7 +16,7 @@ export const SignUpScreen = () => {
 	}
 
 	return (
-		<Screen>
+		<Screen scrollable>
 			<Header title="Criar conta" />
 			<SignUpForm onSubmit={handleSignUp} />
 			<Logo />
