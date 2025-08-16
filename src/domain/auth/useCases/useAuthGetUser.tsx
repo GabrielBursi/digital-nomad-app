@@ -17,7 +17,7 @@ export const useAuthGetUser = () => {
 	})
 
 	return {
-		user: data,
+		authUser: data,
 		error,
 		isLoading: isFetching,
 	} as const
