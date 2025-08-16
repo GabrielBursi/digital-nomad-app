@@ -16,4 +16,5 @@ export interface AuthRepo {
 	signOut: () => Promise<void>
 	sendResetPasswordEmail: (email: string) => Promise<void>
 	signUp: (params: PayloadAuthSignUp) => Promise<void>
+	getUser: () => Promise<AuthUser>
 }

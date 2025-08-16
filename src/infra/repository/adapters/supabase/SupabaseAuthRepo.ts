@@ -40,4 +40,13 @@ export class SupabaseAuthRepo implements AuthRepo {
 			redirectTo: `${EXPO_PUBLIC_WEB_URL}/reset-password`,
 		})
 	}
+
+	getUser = async (): Promise<AuthUser> => {
+		const { data, error } = await supabaseClient.auth.getUser()
+		if (error) {
+			throw new Error('error get User')
+		}
+
+		return SupabaseAdapters.ToAuthUser(data.user)
+	}
 }

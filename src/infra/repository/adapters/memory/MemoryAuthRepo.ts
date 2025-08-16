@@ -7,6 +7,13 @@ import type {
 } from '@/domain/auth'
 
 export class MemoryAuthRepo implements AuthRepo {
+	async getUser(): Promise<AuthUser> {
+		await Promise.resolve()
+		const user = authUsers[0]
+		if (!user) throw new Error('User does not exists')
+		return user
+	}
+
 	async signUp(params: PayloadAuthSignUp): Promise<void> {
 		await Promise.resolve()
 		const userAlreadyExists = authUsers.find(
