@@ -37,6 +37,7 @@ const Configuration: UserConfig = {
 				'auth',
 				'feedback',
 				'storage',
+				'user',
 			],
 		],
 	},
