@@ -1,11 +1,14 @@
 import React from 'react'
 
-import { Screen, Text } from '@/components'
+import { Header, Screen, UpdatePasswordForm } from '@/components'
 
 export const UpdatePasswordScreen = () => {
+	const handleUpdatePassword = () => {}
+
 	return (
 		<Screen>
-			<Text>UpdatePassword</Text>
+			<Header title="Atualizar Senha" />
+			<UpdatePasswordForm onSubmit={handleUpdatePassword} />
 		</Screen>
 	)
 }
