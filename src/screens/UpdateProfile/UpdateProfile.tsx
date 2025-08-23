@@ -4,19 +4,17 @@ import { useLocalSearchParams } from 'expo-router'
 
 import { Header, Screen, UpdateProfileForm } from '@/components'
 import { AuthUser } from '@/domain/auth'
+import { useAuthUpdateProfile } from '@/domain/auth/useCases'
 
 export const UpdateProfileScreen = () => {
 	const userData = useLocalSearchParams<Pick<AuthUser, 'fullname' | 'email'>>()
 
-	const handleUpdateProfile = () => {}
+	const { updateProfile } = useAuthUpdateProfile()
 
 	return (
 		<Screen>
 			<Header title="Atualizar Perfil" />
-			<UpdateProfileForm
-				onSubmit={handleUpdateProfile}
-				defaultValues={userData}
-			/>
+			<UpdateProfileForm onSubmit={updateProfile} defaultValues={userData} />
 		</Screen>
 	)
 }
