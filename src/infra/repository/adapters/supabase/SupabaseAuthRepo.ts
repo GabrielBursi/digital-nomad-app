@@ -3,6 +3,7 @@ import type {
 	AuthUser,
 	PayloadAuthSignIn,
 	PayloadAuthSignUp,
+	PayloadAuthUpdateProfile,
 } from '@/domain/auth'
 import { ENV_VARIABLES } from '@/env'
 
@@ -48,5 +49,15 @@ export class SupabaseAuthRepo implements AuthRepo {
 		}
 
 		return SupabaseAdapters.ToAuthUser(data.user)
+	}
+
+	updateProfile = async (params: PayloadAuthUpdateProfile): Promise<void> => {
+		const { error } = await supabaseClient.auth.updateUser({
+			email: params.email,
+			data: { fullname: params.fullname },
+		})
+		if (error) {
+			throw new Error('error updating user')
+		}
 	}
 }
