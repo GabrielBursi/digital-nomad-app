@@ -1,5 +1,7 @@
 import React, { memo } from 'react'
 
+import { router } from 'expo-router'
+
 import { Box, Button, LineItem, Text } from '@/components/ui'
 
 import type { ProfileHeaderProps } from './ProfileHeader.types'
@@ -26,14 +28,22 @@ const ProfileHeaderMemoized = ({ authUser }: Readonly<ProfileHeaderProps>) => {
 					<Button
 						title="Editar perfil"
 						variant="secondary"
-						onPress={() => {}}
+						onPress={() =>
+							router.navigate({
+								pathname: '/update-profile',
+								params: {
+									fullname: authUser.fullname,
+									email: authUser.email,
+								},
+							})
+						}
 					/>
 				</Box>
 				<Box flex={1}>
 					<Button
 						title="Alterar senha"
 						variant="secondary"
-						onPress={() => {}}
+						onPress={() => router.navigate('/update-password')}
 					/>
 				</Box>
 			</Box>
