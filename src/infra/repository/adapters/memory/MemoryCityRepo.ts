@@ -59,4 +59,9 @@ export class MemoryCityRepo implements CityRepo {
 	async toggleFavorite(): Promise<void> {
 		await Promise.resolve()
 	}
+
+	async findAllFavorites(): Promise<CityPreview[]> {
+		await Promise.resolve()
+		return []
+	}
 }
