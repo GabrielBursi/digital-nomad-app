@@ -16,6 +16,11 @@ export type PayloadAuthUpdateProfile = {
 	email: string
 }
 
+export type PayloadAuthUpdatePassword = {
+	currentPassword: string
+	newPassword: string
+}
+
 export interface AuthRepo {
 	signIn: (payload: PayloadAuthSignIn) => Promise<AuthUser>
 	signOut: () => Promise<void>
@@ -23,4 +28,5 @@ export interface AuthRepo {
 	signUp: (params: PayloadAuthSignUp) => Promise<void>
 	getUser: () => Promise<AuthUser>
 	updateProfile: (params: PayloadAuthUpdateProfile) => Promise<void>
+	updatePassword: (params: PayloadAuthUpdatePassword) => Promise<void>
 }

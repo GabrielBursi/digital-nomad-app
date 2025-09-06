@@ -3,6 +3,7 @@ import type {
 	AuthUser,
 	PayloadAuthSignIn,
 	PayloadAuthSignUp,
+	PayloadAuthUpdatePassword,
 	PayloadAuthUpdateProfile,
 } from '@/domain/auth'
 import { ENV_VARIABLES } from '@/env'
@@ -22,11 +23,11 @@ export class SupabaseAuthRepo implements AuthRepo {
 		return SupabaseAdapters.ToAuthUser(data.user)
 	}
 
-	signUp = async (params: PayloadAuthSignUp): Promise<void> => {
+	signUp = async (payload: PayloadAuthSignUp): Promise<void> => {
 		const { error } = await supabaseClient.auth.signUp({
-			email: params.email,
-			password: params.password,
-			options: { data: { fullname: params.fullname } },
+			email: payload.email,
+			password: payload.password,
+			options: { data: { fullname: payload.fullname } },
 		})
 		if (error) {
 			throw new Error('erro on register user')
@@ -51,13 +52,30 @@ export class SupabaseAuthRepo implements AuthRepo {
 		return SupabaseAdapters.ToAuthUser(data.user)
 	}
 
-	updateProfile = async (params: PayloadAuthUpdateProfile): Promise<void> => {
+	updateProfile = async (payload: PayloadAuthUpdateProfile): Promise<void> => {
 		const { error } = await supabaseClient.auth.updateUser({
-			email: params.email,
-			data: { fullname: params.fullname },
+			email: payload.email,
+			data: { fullname: payload.fullname },
 		})
 		if (error) {
 			throw new Error('error updating user')
+		}
+	}
+
+	updatePassword = async (
+		payload: PayloadAuthUpdatePassword
+	): Promise<void> => {
+		const authUser = await this.getUser()
+		await this.signIn({
+			email: authUser.email,
+			password: payload.currentPassword,
+		})
+
+		const { error } = await supabaseClient.auth.updateUser({
+			password: payload.newPassword,
+		})
+		if (error) {
+			throw new Error('error updating password')
 		}
 	}
 }

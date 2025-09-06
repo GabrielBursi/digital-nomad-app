@@ -57,4 +57,8 @@ export class MemoryAuthRepo implements AuthRepo {
 	async signOut(): Promise<void> {
 		return await Promise.resolve()
 	}
+
+	async updatePassword(): Promise<void> {
+		await Promise.resolve()
+	}
 }
