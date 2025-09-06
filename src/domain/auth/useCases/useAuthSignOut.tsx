@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { useFeedbackService } from '@/infra/feedback'
 import { useRepository } from '@/infra/repository'
@@ -11,6 +11,7 @@ export const useAuthSignOut = () => {
 	const { auth } = useRepository()
 	const feedbackService = useFeedbackService()
 	const { removeAuthUser } = useAuthContext()
+	const queryClient = useQueryClient()
 
 	const { error, isPending, isSuccess, mutate } = useMutation({
 		mutationKey: ['signOut'],
@@ -18,6 +19,7 @@ export const useAuthSignOut = () => {
 		gcTime: Infinity,
 		onSuccess: async () => {
 			await removeAuthUser()
+			queryClient.clear()
 			feedbackService.send({
 				type: 'success',
 				message: `sign out!`,
