@@ -3,7 +3,14 @@ import { ImageBackground, Pressable, StyleSheet } from 'react-native'
 
 import { Link } from 'expo-router'
 
-import { BlackOpacity, Box, Icon, Text } from '@/components/ui'
+import {
+	BlackOpacity,
+	Box,
+	Icon,
+	Text,
+	TouchableOpacityBox,
+} from '@/components/ui'
+import { useCityToggleFavorite } from '@/domain/city/useCases'
 import { useAppTheme, useImageSource } from '@/hooks'
 
 import { CityCardProps } from './CityCard.types'
@@ -11,6 +18,8 @@ import { CityCardProps } from './CityCard.types'
 const CityCardMemoized = ({ cityPreview, style }: Readonly<CityCardProps>) => {
 	const { borderRadii } = useAppTheme()
 	const coverImage = useImageSource(cityPreview.coverImage)
+	const { toggleFavorite } = useCityToggleFavorite()
+
 	return (
 		<Link push href={`/city-details/${cityPreview.id}`} asChild>
 			<Pressable>
@@ -21,9 +30,14 @@ const CityCardMemoized = ({ cityPreview, style }: Readonly<CityCardProps>) => {
 				>
 					<BlackOpacity />
 					<Box flex={1} padding="s24" justifyContent="space-between">
-						<Box alignSelf="flex-end">
+						<TouchableOpacityBox
+							alignSelf="flex-end"
+							onPress={() => {
+								toggleFavorite({ cityId: cityPreview.id, isFavorite: false })
+							}}
+						>
 							<Icon name="Favorite-outline" color="text" />
-						</Box>
+						</TouchableOpacityBox>
 
 						<Box>
 							<Text variant="title22">{cityPreview.name}</Text>
