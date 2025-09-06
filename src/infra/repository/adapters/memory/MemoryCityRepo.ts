@@ -55,4 +55,8 @@ export class MemoryCityRepo implements CityRepo {
 			coverImage: city.coverImage,
 		}))
 	}
+
+	async toggleFavorite(): Promise<void> {
+		await Promise.resolve()
+	}
 }
