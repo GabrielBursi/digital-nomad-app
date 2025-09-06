@@ -1,9 +1,12 @@
 import React from 'react'
 
 import { Header, Screen, UpdatePasswordForm } from '@/components'
+import { useAuthUpdatePassword } from '@/domain/auth/useCases'
 
 export const UpdatePasswordScreen = () => {
-	const handleUpdatePassword = () => {}
+	const { updatePassword } = useAuthUpdatePassword()
+
+	const handleUpdatePassword = updatePassword
 
 	return (
 		<Screen>
